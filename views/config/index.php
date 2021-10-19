@@ -35,7 +35,7 @@ $module = Yii::$app->getModule('name-parser');
         </div>
 
         <div>
-            <?= Button::primary(Yii::t('NameParserModule.config', 'Normalize the names of all existing users'))->link('normalize-all-users') ?>
+            <?= Button::primary(Yii::t('NameParserModule.config', 'Normalize the names of all existing users'))->link('/name-parser/config/normalize-all-users') ?>
         </div>
 
     </div>
