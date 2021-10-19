@@ -1,0 +1,21 @@
+{
+    "id": "name-parser",
+    "name": "Name Parser",
+    "description": "Normalize the format of users' first and last name",
+    "keywords": [],
+    "version": "0.1",
+    "humhub": {
+        "minVersion": "1.7"
+    },
+    "homepage": "https://cuzy.app",
+    "authors": [
+        {
+            "name": "Marc FARRE",
+            "homepage": "https://marc.fun",
+            "role": "Developer"
+        }
+    ],
+    "screenshots": [
+        "resources/screen_1.png"
+    ]
+}
