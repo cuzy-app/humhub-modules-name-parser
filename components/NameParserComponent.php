@@ -15,11 +15,14 @@ use yii\helpers\StringHelper;
 class NameParserComponent extends Component
 {
     /**
-     * @param string $name
+     * @param string|null $name
      * @return string
      */
-    public static function parse (string $name)
+    public static function parse (?string $name)
     {
+        if (!$name) {
+            return $name;
+        }
         $newName = mb_strtolower(
             trim(
                 preg_replace(
