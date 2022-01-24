@@ -1,14 +1,15 @@
 <?php
 /**
  * Name Parser
- * @link https://www.cuzy.app
- * @license https://www.cuzy.app/cuzy-license
- * @author [Marc FARRE](https://marc.fun)
+ * @link https://github.com/cuzy-app/humhub-modules-name-parser
+ * @license https://github.com/cuzy-app/humhub-modules-name-parser/blob/master/docs/LICENCE.md
+ * @author [Marc FARRE](https://marc.fun) for [CUZY.APP](https://www.cuzy.app)
  */
 
 namespace humhub\modules\nameParser\jobs;
 
 
+use humhub\modules\nameParser\components\NameParserComponent;
 use humhub\modules\queue\ActiveJob;
 use humhub\modules\user\models\Profile;
 use yii\queue\RetryableJobInterface;
@@ -28,8 +29,13 @@ class ParseAllUsers extends ActiveJob implements RetryableJobInterface
     public function run()
     {
         foreach (Profile::find()->all() as $profile) {
-            // An event will parse the first and last name
-            $profile->save(false);
+            $parsedFirstname = NameParserComponent::parse($profile->firstname);
+            $parsedLastname = NameParserComponent::parse($profile->lastname);
+            if ($parsedFirstname !== $profile->firstname || $parsedLastname !== $profile->lastname) {
+                $profile->firstname = $parsedFirstname;
+                $profile->lastname = $parsedLastname;
+                $profile->save(false); // No validation in case, for example, a required profile filed is empty
+            }
         }
     }
 

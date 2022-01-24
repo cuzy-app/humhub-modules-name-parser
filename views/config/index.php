@@ -1,19 +1,21 @@
 <?php
 /**
  * Name Parser
- * @link https://www.cuzy.app
- * @license https://www.cuzy.app/cuzy-license
- * @author [Marc FARRE](https://marc.fun)
+ * @link https://github.com/cuzy-app/humhub-modules-name-parser
+ * @license https://github.com/cuzy-app/humhub-modules-name-parser/blob/master/docs/LICENCE.md
+ * @author [Marc FARRE](https://marc.fun) for [CUZY.APP](https://www.cuzy.app)
  */
 
+use humhub\modules\nameParser\Module;
+use humhub\modules\ui\view\components\View;
 use humhub\widgets\Button;
 
 
 /**
- * @var $this \humhub\modules\ui\view\components\View
+ * @var $this View
  */
 
-/** @var \humhub\modules\nameParser\Module $module */
+/** @var Module $module */
 $module = Yii::$app->getModule('name-parser');
 ?>
 
@@ -32,10 +34,8 @@ $module = Yii::$app->getModule('name-parser');
 
         <div class="alert alert-info">
             <p><?= Yii::t('NameParserModule.config', 'For each new user and each time the profile is updated, the first name and last name will be normalized.') ?></p>
-        </div>
-
-        <div>
-            <?= Button::primary(Yii::t('NameParserModule.config', 'Normalize the names of all existing users'))->link('/name-parser/config/normalize-all-users') ?>
+            <br>
+            <?= Button::primary(Yii::t('NameParserModule.config', 'Normalize the names of all existing users'))->link(['/name-parser/config/normalize-all-users']) ?>
         </div>
 
     </div>

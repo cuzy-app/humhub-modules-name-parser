@@ -1,9 +1,9 @@
 <?php
 /**
  * Name Parser
- * @link https://www.cuzy.app
- * @license https://www.cuzy.app/cuzy-license
- * @author [Marc FARRE](https://marc.fun)
+ * @link https://github.com/cuzy-app/humhub-modules-name-parser
+ * @license https://github.com/cuzy-app/humhub-modules-name-parser/blob/master/docs/LICENCE.md
+ * @author [Marc FARRE](https://marc.fun) for [CUZY.APP](https://www.cuzy.app)
  */
 
 use humhub\modules\nameParser\Events;
