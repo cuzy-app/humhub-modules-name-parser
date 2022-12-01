@@ -1,5 +1,8 @@
 # Name Parser
 
+> :warning: **This module isn't maintained anymore**
+> The latested module version is available [on Humhub marketplace](https://www.humhub.com/en/marketplace/name-parser)
+
 Normalize the format of users' first and last name.
 
 Examples:
